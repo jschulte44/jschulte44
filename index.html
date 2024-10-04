@@ -8,6 +8,21 @@
     <link href="./css/style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+	function myFunction(imgs) {
+  	// Get the expanded image
+	  var expandImg = document.getElementById("expandedImg");
+	  // Get the image text
+	  var imgText = document.getElementById("imgtext");
+	  // Use the same src in the expanded image as the image being clicked on from the grid
+	  expandImg.src = imgs.src;
+	  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+	  imgText.innerHTML = imgs.alt;
+	  // Show the container element (hidden with CSS)
+	  expandImg.parentElement.style.display = "block";
+
+	}
+	</script>
     <style>
         section {
             padding: 60px 0;
@@ -131,6 +146,47 @@
             </div>
         </div>
     </section>
+    
+        <section id="gallery" class="bg-dark">
+        <div class="container bg-dark justify-content-center align-content-center">
+        <h3>Gallery</h3>
+	<div class="row">
+	<div class="column">
+	    <img class="galleryImg" src="img/joyce1.png" alt="Henry Gonzalez, former 1st Chair Personal Commissioner
+" onclick="myFunction(this);"/></div>
+	<div class="column">
+<img class="galleryImg" src="img/joyce2.png" alt="Family and Friends on our 1st Campaign Walk" onclick="myFunction(this);"/></div>
+	<div class="column">
+<img class="galleryImg" src="img/joyce3.png" alt="Endorsed by Labor Union
+" onclick="myFunction(this);"/></div>
+	<div class="column">
+<img class="galleryImg" src="img/joyce4.png" alt="Back to School Night at Sierra Vista Middle School" onclick="myFunction(this);"/></div>
+	<div class="column">
+<img class="galleryImg" src="img/joyce5.png" alt="Back to School Night at Fairgrove k-8" onclick="myFunction(this);"/></div>
+	<div class="column">
+<img class="galleryImg" src="img/joyce6.png" alt="Back to School Night at Grandview Middle School" onclick="myFunction(this);"/></div>
+	<div class="column">
+<img class="galleryImg" src="img/joyce7.png" alt="Endorsed by Jay Chen, Mt.Sac Trustee" onclick="myFunction(this);"/></div>
+	<div class="column">
+<img class="galleryImg" src="img/joyce8.png" alt="La Puente Women's Club" onclick="myFunction(this);"/></div>
+	<div class="column">
+<img class="galleryImg" src="img/joyce9.png" alt="Gabriel Quiñones, Mayor of La Puente" onclick="myFunction(this);"/></div>
+	<div class="column">
+<img class="galleryImg" src="img/joyce10.png" alt="Future Voter!" onclick="myFunction(this);"/></div>
+	  </div>
+	  </div>
+	  <div class="piccontainer">
+	  <!-- Close the image -->
+	  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+	  <!-- Expanded image -->
+	  <img id="expandedImg" style="max-width:100%;max-height:500px">
+
+	  <!-- Image text -->
+	  <div id="imgtext"></div>
+	</div>
+        <div>
+        </section>
 
     <section id="contribute">
         <div class="container">
